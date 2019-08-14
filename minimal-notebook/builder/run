@@ -10,6 +10,20 @@ JUPYTER_ENABLE_WEBDAV=${JUPYTER_ENABLE_WEBDAV:-false}
 
 export JUPYTER_ENABLE_WEBDAV
 
+http_proxy=""
+https_proxy=""
+HTTP_PROXY=""
+HTTPS_PROXY=""
+no_proxy=""
+NO_PROXY=""
+
+export http_proxy
+export https_proxy
+export HTTP_PROXY
+export HTTPS_PROXY
+export no_proxy
+export NO_PROXY
+
 if [ -f /var/run/secrets/kubernetes.io/serviceaccount/namespace ]; then
     DEPLOYMENT=`echo $HOSTNAME | sed -e 's/^\(.*\)-[^-]*-[^-]*$/\1/'`
     NAMESPACE=`cat /var/run/secrets/kubernetes.io/serviceaccount/namespace`
